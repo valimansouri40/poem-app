@@ -4,8 +4,8 @@ const dotenv= require('dotenv');
 const app=require('./app');
 
 dotenv.config({path:'./config.env'});
-
-mongoose.connect(process.env.LOCAL_DATABASE,{
+const db= process.env.DATABASE.replace('<password>',process.env.PASSWORD)
+mongoose.connect(db,{
     useCreateIndex:true,
     useFindAndModify:false,
     useNewUrlParser:true,
