@@ -22,7 +22,9 @@ const RateSchema= mongoose.Schema({
     toObject: { virtuals: true }
 });
 
-RateSchema.index({PoemId:1,UserId:1},{unique:true})
+RateSchema.index({ PoemId: 1, UserId: 1 }, { unique: true });
+
+
 
 RateSchema.statics.calcAverageRatings= async function(poemId){
 
